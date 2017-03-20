@@ -18,7 +18,7 @@ mkdir $MAIN_DIR/lib
 echo -e "#!/usr/bin/env bash
 BASEDIR=\$(dirname \$0)
 export LD_LIBRARY_PATH=\$BASEDIR/lib:\$LD_LIBRARY_PATH
-\$BASEDIR/$PROGRAM_NAME \$@" >> $MAIN_DIR/run.sh
+\$BASEDIR/$PROGRAM_NAME \$@" > $MAIN_DIR/run.sh
 
 chmod +x $MAIN_DIR/run.sh
 
