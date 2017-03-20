@@ -25,12 +25,19 @@ cd standalone-it
 
 ## How to use the standalone tarball:
 
-1. Extract the tarball contents
+1. Extract the tarball contents. A `standalone` folder will be created.
 ```
 tar -xvf standalone.tar.gz
 ```
 
-2. A `standalone` folder will be created. Run the run.sh script inside it (can be from any path)
+(You can run those scripts below from any path)
+
+3. Run the `configure.sh` to create lib folder with missing dynamic libraries
+```
+./standalone/run.sh <arguments to program>
+```
+
+4. Run the `run.sh` to start the program
 ```
 ./standalone/run.sh <arguments to program>
 ```
