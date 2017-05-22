@@ -14,6 +14,7 @@ MAIN_DIR="$TMP_DIR/standalone"
 
 mkdir $MAIN_DIR
 mkdir $MAIN_DIR/lib
+mkdir $MAIN_DIR/lib_bkp
 
 echo -e "#!/usr/bin/env bash
 BASEDIR=\$(dirname \$0)
@@ -48,7 +49,7 @@ log "copying dinamyc libraries..."
 ldd $1 \
     | grep "=>" \
     | grep -oP '(\/[^ ]+)' \
-    | xargs -i -n 1 cp {} $MAIN_DIR/lib_bkp
+    | xargs -i -n 1 cp {} $MAIN_DIR/lib_bkp/
 
 log "copying binary..."
 cp $1 $MAIN_DIR
