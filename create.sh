@@ -20,6 +20,8 @@ BASEDIR=\$(dirname \$0)
 export LD_LIBRARY_PATH=\$BASEDIR/lib:\$LD_LIBRARY_PATH
 \$BASEDIR/$PROGRAM_NAME \$@" > $MAIN_DIR/run.sh
 
+chmod +x $MAIN_DIR/run.sh
+
 echo -e "#!/usr/bin/env bash
 BASEDIR=\$(dirname \$0)
 export LD_LIBRARY_PATH=\$BASEDIR/lib:\$LD_LIBRARY_PATH
@@ -40,7 +42,7 @@ while true; do
     | xargs -i -n 1 cp \$BASEDIR/lib_bkp/{} \$BASEDIR/lib
 done" > $MAIN_DIR/configure.sh
 
-chmod +x $MAIN_DIR/run.sh
+chmod +x $MAIN_DIR/configure.sh
 
 log "copying dinamyc libraries..."
 ldd $1 \
